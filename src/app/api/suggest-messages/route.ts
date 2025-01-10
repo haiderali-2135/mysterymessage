@@ -1,5 +1,5 @@
 import OpenAI from 'openai';
-import { OpenAIStream, StreamingTextResponse } from 'ai';
+//import { OpenAIStream, StreamingTextResponse } from 'ai';
 import { NextResponse } from 'next/server';
 
 const openai = new OpenAI({
@@ -20,10 +20,10 @@ export async function POST(req: Request) {
       prompt,
     });
 
-    const stream = OpenAIStream(response);
+    //const stream = OpenAIStream(response);
     
     
-    return new StreamingTextResponse(stream);
+    //return new StreamingTextResponse(stream);
   } catch (error) {
     if (error instanceof OpenAI.APIError) {
       // OpenAI API error handling
