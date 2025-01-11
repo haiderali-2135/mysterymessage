@@ -24,8 +24,8 @@ export async function GET(request: Request){
         if(!result.success){
             const usernameErrors = result.error.format().username?._errors || [] // can also send custom error
             return Response.json({
-                 success: false,
-                message: "invalid query parameter"
+                success: false,
+                message: usernameErrors?.length > 0 ? usernameErrors.join(', ') : 'Invalid query parameters',
             },{status : 400})
         }
 
